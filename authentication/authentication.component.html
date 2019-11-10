@@ -1,0 +1,30 @@
+<div class="navbar d-flex justify-content-center">
+  <button class="btn btn-light btn-sm" *ngIf="!isLoggedIn" (click)="loginCard = !loginCard">Entrar</button>
+  <button *ngIf="isLoggedIn" (click)="signout()" class="btn btn-light btn-sm">Salir</button>
+
+  <div *ngIf="loginCard" class="card">
+    <button type="button" class="close d-flex justify-content-end" data-dismiss="modal" aria-label="Close">
+      <span aria-hidden="true" (click)="loginCard = false;">&times;</span>
+    </button>
+    <div class="card-body">
+      <h5 class="card-title">Iniciar sesión</h5>
+      <div>
+        <div class="input-group input-group-sm mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text">Email</span>
+          </div>
+          <input type="text" class="form-control">
+        </div>
+        <div class="input-group input-group-sm mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text">Contraseña</span>
+          </div>
+          <input type="text" class="form-control">
+        </div>
+        <div class="text-center">
+          <button class="btn btn-light btn-sm" (click)="signin()">Iniciar sesión</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
